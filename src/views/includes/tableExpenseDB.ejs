@@ -1,0 +1,50 @@
+<div class="res">
+  <table class="standardTable">
+    <thead>
+      <% if (monthVar) { %>
+      <tr id="month">
+        <td colspan="5"><%= monthVar %></td>
+      </tr>
+      <% } %>
+      <tr id="firstLine">
+        <td class="w9">Data</td>
+        <td class="w22">Despesa</td>
+        <td class="w54">Descrição</td>
+        <td class="w10">Valor</td>
+        <td class="w5"></td>
+
+      </tr>
+    </thead>
+    <tbody id="tableService">
+      <% balanceDB.forEach(service => { %>
+        <tr>
+            <td><%= service.date %></td>
+            <td><%= service.expense %></td>
+            <td><%= service.description %></td>
+            <td><%= service.expenseValue %></td>
+            <td>
+              <div class="delEdit">
+                <form>
+                  <button onclick="window.location.href=`/balance/edit/<%= service._id %>`" type="button">
+                    <img src="../../images/icons/botao-editar.png" alt="" >
+                  </button>
+                </form>
+                <form>
+                  <button onclick="window.location.href=`/balance/delete/<%= service._id %>`" type="button">
+                    <img src="../../images/icons/botao-apagar.png" alt="">
+                  </button>
+                </form>
+              </div>
+            </td>
+        </tr>
+    <% }); %>
+    <tr id="lastLine">
+      <td>valor</td>
+      <td>valor/td>
+      <td>Total:</td>
+      <td><%= totalMonth %></td>
+    </tr>
+    </tbody>
+  </table>
+ 
+</div>

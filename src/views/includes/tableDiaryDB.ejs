@@ -1,0 +1,42 @@
+
+<div class="res">
+  <table class="standardTable">
+    <thead>
+      <% if (dayVar && monthVar) { %>
+      <tr id="month">
+        <td colspan="6">Agendamentos do dia <%= dayVar %> de <%= monthVar %> </td>
+      </tr>
+      <% } %>
+      <tr id="headLineTBDiary">
+        <td class="w9">Data</td>
+        <td class="w9">Inicio</td>
+        <td class="w9">Fim</td>
+        <td class="w22">Cliente</td>
+        <td class="w45">Serviço</td>
+        <td class="w5"></td>
+      </tr>
+    </thead>
+    <tbody id="tableDiary">
+      <% diary.forEach(service => { %>
+        <tr>
+            <td><%= service.date %></td>
+            <td><%= service.startTime %></td>
+            <td><%= service.endTime %></td>
+            <td><%= service.client %></td>
+            <td><%= service.service %></td>
+            <td>
+              <div class="delEdit">
+                <button onclick="window.location.href=`/diary/edit/<%= service._id %>`">
+                  <img src="../../images/icons/botao-editar.png" alt="" >
+                </button>
+                <button onclick="window.location.href=`/diary/delete/<%= service._id %>`">
+                <img src="../../images/icons/botao-apagar.png" alt="">
+                </button>
+              </div>
+            </td>
+        </tr>
+    <% }); %>
+    </tbody>
+  </table>
+ 
+</div>

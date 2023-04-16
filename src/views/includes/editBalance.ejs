@@ -1,0 +1,26 @@
+
+  <div class="containerRecord" id="edit">
+  <h3>Edite o Registro: </h3> 
+  
+  <form method="post" action="/balance/update/<%= balanceDB._id %>">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div div id="div-data">
+      <input class="input-1-6" type="text" name="date" id="data" autocomplete="on"placeholder="Data" value="<%= balanceDB.date %>">
+      <label for="data">Data</label>
+    </div>
+    <div id="div-cliente">
+      <input class="input-3-6" type="text" name="expense" id="expense" autocomplete="on" placeholder="Despesa" value="<%= balanceDB.expense %>">
+      <label for="expense">Despesa</label>
+    </div>
+    <div id="div-service">
+      <input class="input-3-6" type="text" name="description" id="description" autocomplete="on" placeholder="Descrição" value="<%= balanceDB.description %>">
+      <label for="description">Descrição</label>
+    </div>
+    <div id="div-value">
+      <input class="input-1-6" type="text" name="expenseValue" id="expenseValue" autocomplete="on" placeholder="Valor" value="<%= balanceDB.expenseValue %>">
+      <label for="expenseValue">Valor</label>
+    </div>
+    <div id="div-btn"><input class="input-1-6 lancar" type="submit" value="Editar"></div>
+
+  </form>
+  </div>

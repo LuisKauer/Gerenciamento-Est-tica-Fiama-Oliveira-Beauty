@@ -1,0 +1,18 @@
+<%- include("includes/head") %> 
+
+<body>
+<%- include("includes/header") %> 
+<%- include("includes/navBar") %>
+  <div class="containerRecord">
+  <h3>Faturamento</h3> 
+  <div class="invoicing">
+    <div class="monthly">
+    <button class="btn-monthly" onclick="window.location.href = `/invoicing/monthly/`" title="Consulta faturamento de um mês específico" type="submit">Mensal</button>
+  </div>
+  <div class="yearly">
+    <button class="btn-yearly" onclick="window.location.href = `/invoicing/yearly/`" title="Consulta faturamento de um ano específico" type="submit">Anual</button>
+  </div>
+  </div>  
+  </div>
+</body>
+</html>

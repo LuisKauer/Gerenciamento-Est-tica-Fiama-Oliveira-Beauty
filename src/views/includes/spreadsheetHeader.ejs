@@ -1,0 +1,45 @@
+
+
+<div class="spreadsheet-header">
+  <img id="imgLogo" src="/images/logo-fiama.png" alt="logotipo Estética Fiama Oliveira Beauty" srcset="">
+
+</div>
+<div class="title">
+  <h3>Resultado de <%= titleDate %></h3>
+</div>
+
+<div class="navSpreasheetM">
+  <form action="/invoicing/monthlyConsult/" method="post" >
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <select name="monthSelect" id="spredsheetMonth">
+        <option value="" disabled selected>Selecione um Mês</option>
+        <option value="01">Janeiro</option>
+        <option value="02">Fevereiro</option>
+        <option value="03">Março</option>
+        <option value="04">Abril</option>
+        <option value="05">Maio</option>
+        <option value="06">Junho</option>
+        <option value="07">Julho</option>
+        <option value="08">Agosto</option>
+        <option value="09">Setembro</option>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+      </select>
+    <select name="yearSelect" id="spreadSheetYear">
+  <option value="" disabled selected>Selecione um Ano</option>
+  <% let currentYear = new Date().getFullYear() - 2; %>
+  <% for (let i = 0; i < 10; i++) { %>
+    <option value="<%= currentYear %>"><%= currentYear %></option> 
+    <% currentYear++ %>
+  <% } %>
+ </select>
+
+ <button type="submit">OK</button>
+  </form>
+</div>
+
+<div onclick="window.location.href=`/invoicing/`" class="btn-back">
+Voltar
+</div>
+

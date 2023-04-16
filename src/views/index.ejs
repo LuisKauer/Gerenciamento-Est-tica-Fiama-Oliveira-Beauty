@@ -1,0 +1,56 @@
+
+<%- include("includes/headLogin") %> 
+
+<body>
+<%- include("includes/header") %> 
+  
+<div class="navContainer">
+  <div class="btn registerDiary">
+    <% if (!user) { %>
+     <a href="/login/">
+       <h3>Agendamentos</h3>
+    </a>
+    <% } else {%>
+    <a href="/diary/">
+      <h3>Agendamentos</h3>
+    </a>
+    <% } %>
+</div>
+    <div class="btn register">
+        <% if (!user) { %>
+         <a href="/login/">
+           <h3>Registrar Serviços</h3>
+        </a>
+        <% } else {%>
+        <a href="/service/">
+          <h3>Registrar Serviços</h3>
+        </a>
+        <% } %>
+    </div>
+    <div class="btn consult">
+      <% if (!user) { %>
+       <a href="/login/">
+         <h3>Consultar Serviços</h3>
+      </a>
+      <% } else {%>
+      <a href="/service/findServicesIndex">
+        <h3>Consultar Serviços</h3>
+      </a>
+      <% } %>
+    </div>
+    <div class="btn balance">
+      <% if (!user) { %>
+       <a href="/login/">
+         <h3>Faturamento</h3>
+      </a>
+      <% } else {%>
+      <a href="/balance/">
+        <h3>Faturamento</h3>
+      </a>
+      <% } %>
+    </div>
+</div>
+   <script src="../../public/assets/js/bundle.js"></script>
+
+</body>
+</html>

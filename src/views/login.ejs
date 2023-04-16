@@ -1,0 +1,40 @@
+<%- include("includes/headLogin") %>
+
+<body>
+  <%- include("includes/header") %>
+  
+  <section class="container">
+     <%- include("includes/alert") %>
+    <h1>Crie sua conta ou Entrar</h1>
+    <h3>Faça login ou crie sua conta abaixo.</h3>
+   
+    <div class="display">
+      <div class="cadastro">
+        <form class="formCadastro" action="/login/register" method="post">
+          <h4>Faça seu Cadastro</h4>
+          <p>Preencha o formulário abaixo:</p>
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <label for="nameId">Email:</label>
+            <input type="text" name="email" id="nameId">
+          <label for="passId">Senha:</label>
+            <input type="password" name="password" id="passId">
+          <button class="enviar">Cadastrar</button>
+        </form>
+      </div>
+      <div class="login">
+        <form class="formLogin" action="/login/login" method="post">
+          <h4>Faça seu Login</h4>
+          <p>Acesse sua conta:</p>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <label for="nameLoginId">Email:</label>
+            <input type="text" name="email" id="nameLoginId">
+          <label for="passLoginId">Senha:</label>
+            <input type="password" name="password" id="passLoginId">
+            <button class="enviar">Logar</button>
+            </form>
+         </div>
+    </div>
+  </section>
+</body>
+
+</html>

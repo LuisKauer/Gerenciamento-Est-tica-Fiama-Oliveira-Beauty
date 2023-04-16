@@ -1,0 +1,42 @@
+<%- include("includes/head") %> 
+
+<body>
+<%- include("includes/header") %> 
+<%- include("includes/navBar") %>
+<div class="containerRecord">
+  <%- include("includes/alert") %>
+  <h3>Registrar Agendamento</h3> 
+
+  <form method="post" action="/diary/register">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div div id="div-data" title="Para registrar o atendimento no mesmo dia, basta ditar o numero do dia">
+      <input class="input-1-6" type="text" name="date" id="data" autocomplete="on"placeholder="Data">
+      <label for="data">Data</label>
+    </div>
+    <div div id="div-startTime" title="Digite a hora inicial">
+      <input class="input-1-6" type="text" name="startTime" id="startTime" autocomplete="on"placeholder="Hora Inicial">
+      <label for="startTime">Hora Inicial</label>
+    </div>
+    <div div id="div-endTime" title="Digite a hora inicial">
+      <input class="input-1-6" type="text" name="endTime" id="endTime" autocomplete="on"placeholder="Hora Final">
+      <label for="endTime">Hora Final</label>
+    </div>
+    <div id="div-cliente">
+      <input class="input-3-6" type="text" name="client" id="cliente" autocomplete="on" placeholder="Cliente">
+      <label for="cliente">Cliente</label>
+    </div>
+    <div id="div-service">
+      <input class="input-3-6" type="text" name="service" id="servico" autocomplete="on" placeholder="Serviço">
+      <label for="servico">Serviço</label>
+    </div>
+  
+    <div id="div-btn"><input class="input-1-6 lancar" type="submit" value="Agendar"></div>
+  </form>
+
+  <% if (diary.length > 0) { %>
+  <%- include("includes/tableDiaryDB") %>
+  <% } %>
+  </div>
+
+</body>
+</html>

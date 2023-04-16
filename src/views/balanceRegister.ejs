@@ -1,0 +1,46 @@
+<%- include("includes/head") %> 
+
+<body>
+<%- include("includes/header") %> 
+<%- include("includes/navBar") %>
+<div class="containerRecord">
+  <%- include("includes/alert") %>
+  <% if (edit) {%> 
+    <%- include("includes/editBalance") %>
+  <% } %>
+
+ 
+  <h3>Registrar Despesa</h3> 
+
+  <form method="post" action="/balance/register">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div div id="div-data" title="Para registrar a despesa no mesmo dia, basta ditar o numero do dia">
+      <input class="" type="text" name="date" id="data" autocomplete="on"placeholder="Data">
+      <label for="data">Data</label>
+    </div>
+   
+    <div id="div-expense">
+      <input class="" type="text" name="expense" id="expenseId" autocomplete="on" placeholder="Despesa">
+      <label for="expense">Despesa</label>
+    </div>
+
+    <div id="div-description">
+      <input class="" type="text" name="description" id="descriptionId" autocomplete="on" placeholder="Despesa">
+      <label for="description">Descrição</label>
+    </div>
+
+    <div id="div-value">
+      <input class="" type="text" name="expenseValue" id="expenseValueId" autocomplete="on" placeholder="Valor">
+      <label for="expenseValue">Valor</label>
+    </div>
+  
+    <div id="div-btn"><input class="lancar" type="submit" value="Registrar"></div>
+  </form>
+
+  <% if (balanceDB.length > 0) { %>
+  <%- include("includes/tableExpenseDB") %>
+  <% } %>
+  </div>
+
+</body>
+</html>

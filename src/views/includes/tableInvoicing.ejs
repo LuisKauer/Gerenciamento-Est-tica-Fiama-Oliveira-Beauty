@@ -1,0 +1,55 @@
+
+<div class="res">
+  <table class="standardTable">
+    <thead>
+      <% if (monthVar) { %>
+      <tr id="month">
+        <td colspan="5"><%= monthVar %></td>
+      </tr>
+      <% } %>
+      <tr id="firstLine">
+        <td class="w9">Data</td>
+        <td class="w22">Cliente</td>
+        <td class="w54">Serviço</td>
+        <td class="w10">Valor</td>
+        <td class="w5"></td>
+
+      </tr>
+    </thead>
+    <tbody id="tableService">
+      <% services.forEach(service => { %>
+        <tr>
+            <td><%= service.date %></td>
+            <td><%= service.client %></td>
+            <td><%= service.service %></td>
+            <td><%= service.valueService %></td>
+            <td>
+              <div class="delEdit">
+                <form>
+                  <button onclick="window.location.href=`/service/edit/<%= service._id %>`" type="button">
+                    <img src="../../images/icons/botao-editar.png" alt="" >
+                  </button>
+                </form>
+                <form>
+                  <button onclick="window.location.href=`/service/delete/<%= service._id %>`" type="button">
+                  <img src="../../images/icons/botao-apagar.png" alt="">
+                  </button>
+                </div>
+                  
+                
+                </div>
+
+              
+            </td>
+        </tr>
+    <% }); %>
+    <tr id="lastLine">
+      <td>valor</td>
+      <td>valor/td>
+      <td>Total:</td>
+      <td><%= totalMonth %></td>
+    </tr>
+    </tbody>
+  </table>
+ 
+</div>

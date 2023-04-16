@@ -1,0 +1,24 @@
+<table class="scheduleTable">
+<thead>
+  <% if (dayVar && monthVar) { %>
+    <tr id="scheduleTableDate">
+      <td colspan="3"><%= dayVar %> de <%= monthVar %></td>
+    </tr>
+  <% } %>
+<tr>
+  <td class="w22"></td>
+  <td class="w22"></td>
+  <td class="w45"></td>
+</tr>
+</thead>
+<tbody>
+  <% diary.forEach(service => { %>
+    <tr>
+      <td><%= service.startTime %> / <%= service.endTime %></td>
+      <td><%= service.client %></td>
+      <td><%= service.service %></td>
+    </tr>
+  <% }); %>
+</tbody>
+
+</table>

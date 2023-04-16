@@ -1,0 +1,34 @@
+<%- include("includes/head") %> 
+
+<body>
+<%- include("includes/header") %> 
+<%- include("includes/navBar") %>
+  <div class="containerRecord">
+  <%- include("includes/alert") %>
+  <h3>Selecione um critério de pesquisas </h3> 
+
+  <form method="post" action="/service/findServices">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div div id="div-data" title="Para pesquisar os registros do mês, digite o número do mês correspondente. Para registros de um dia especifico, digite a data completa sem as barras">
+      <input class="input-1-6" type="text" name="date" id="data" autocomplete="on"placeholder="Data">
+      <label for="data">Data</label>
+    </div>
+    <div id="div-cliente">
+      <input class="input-3-6" type="text" name="client" id="cliente" autocomplete="on" placeholder="Cliente">
+      <label for="cliente">Cliente</label>
+    </div>
+    <div id="div-service">
+      <input class="input-3-6" type="text" name="service" id="servico" autocomplete="on" placeholder="Serviço">
+      <label for="servico">Serviço</label>
+    </div>
+  
+    <div id="div-btn"><input class="input-1-6 lancar" type="submit" value="Consultar"></div>
+  </form>
+
+  <% if (services.length > 0) { %>
+  <%- include("includes/tableDB") %>
+  <% } %>
+  </div>
+
+</body>
+</html>

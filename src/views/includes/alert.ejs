@@ -1,0 +1,38 @@
+
+
+<% if (success.length > 0) { %>
+  
+  <div id="alert-container" class="success">
+    <p><%= success %></p>
+  </div>
+
+  <script>
+    const alertContainerSuccess = document.getElementById('alert-container');
+    alertContainerSuccess.style.display = 'block';
+      setTimeout(() => { 
+        alertContainerSuccess.style.display = 'none';
+      }, 3000);
+  </script>
+
+<% } %>
+
+
+<% if (errors.length > 0) { %>
+  
+  <div id="alert-container" class="erro">
+    <% errors.forEach(erro => { %>
+      <p><%= erro %></p>
+    <%  }); %>
+  </div>
+
+  <script>
+    const alertContainerErro = document.getElementById('alert-container');
+    alertContainerErro.style.display = 'block';
+      setTimeout(() => {
+        alertContainerErro.style.display = 'none';
+      }, 3000);
+  </script>
+
+ 
+<% } %>
+

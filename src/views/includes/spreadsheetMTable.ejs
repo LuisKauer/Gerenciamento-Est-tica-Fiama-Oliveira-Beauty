@@ -1,0 +1,59 @@
+
+<div class="tables">
+  <table id="tableRevenue" class="tableSpredsheetM">
+    <thead>
+      <tr>
+        <th colspan="2">Receitas</th>
+      </tr>
+      <tr>
+        <th class="w10">Dia</th>
+        <th class="w22">Total</th>
+      </tr>
+  
+    </thead>
+    <tbody>
+    <% if (serviceM.length > 0) { %>
+      <% for (let i = 0; i < serviceM.length; i++) { %>
+          <tr>
+            <td><%= serviceM[i].date %></td>
+            <td><%= serviceM[i].value %> </td>
+          </tr>
+        <% } %>
+    <% } %>
+      
+    </tbody>
+    <tfoot>
+      <td>Total:</td>
+      <td><%= totalService %></td>
+    </tfoot>
+  </table>
+  <table id="tableExpense" class="tableSpredsheetM">
+    <thead>
+      <tr>
+        <th colspan="2">Despesas</th>
+      </tr>
+      <tr>
+        <th class="w10">Dia</th>
+        <th class="w22">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (balanceDB.length > 0) { %>
+        <% for (let i = 0; i < balanceDB.length; i++) { %> 
+          <tr>
+            <td><%= balanceDB[i].date %></td>
+            <td><%= balanceDB[i].expenseValue %></td>
+          </tr>
+        <% } %>
+      <% } %> 
+    </tbody>
+    <tfoot>
+      <td>Total:</td>
+      <td><%= totalBalance %></td>
+    </tfoot>
+  </table>
+</div>
+<div class="result">
+  <div>Resultado do Mês:</div>
+  <div><%= result %></div>
+</div>

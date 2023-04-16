@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root{
+  --cor0: rgb(159, 209, 209);
+  --cor1: rgb(183, 183, 157);
+  --cor2: rgb(250, 235, 240);
+  --cor3: rgb(255, 255, 255);
+  --cor4: rgb(175, 175, 175);
+  --cor5: rgb(0, 0, 0);
+
+}
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor3);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+a {
+  text-decoration: none;
+}
+h1, h3, h4, p {
+  margin-bottom: 10px;
+}
+.header {
+  background-color:  rgb(196, 172, 172);
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header span {
+  margin: 10px;
+  text-align: center;
+}
+
+#imgLogo {
+  margin: 10px auto;
+  width: 150px;
+}
+label {
+  display: block;
+  font-size: .8em;
+  margin-bottom: -3px;
+}
+.container {
+  background-color: var(--cor2);
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+.navContainer {
+  padding: 20px;
+  max-width: 700px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  
+  background-color: var(--cor2);
+}
+.register {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--cor1);
+}
+.register a {
+  color: var(--cor5);
+}
+
+.consult {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--cor4);
+}
+.consult a {
+  color: var(--cor5);
+}
+
+.balance {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--cor4);
+}
+
+.balance a {
+  color: var(--cor5);
+}
+
+.registerDiary {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--cor0);
+}
+
+.registerDiary a {
+  color: var(--cor5);
+}
+
+.display {
+  text-align: left;
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+form p {
+  font-size: .9em;
+}
+form input{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  line-height: 1em;
+  font-size: .8em;
+  padding: 5px 10px;
+}
+.enviar {
+  border: none;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.705);
+  margin-top: 20px;
+  padding: 5px 15px;
+  background-color: var(--cor4);
+  font-weight: 700;
+  font-size: .9em;
+  color: var(--cor5);
+  cursor: pointer;
+  border-radius: 5px;
+}
+.enviar:hover {
+  background-color: var(--cor2);
+  color: aliceblue;
+}
+.enviar:active{
+  background-color: var(--cor2);
+  color: black;
+}
+form input:focus {
+  outline: 3px solid var(--cor0);
+}
+.cadastro {
+  width: 49%;
+  background-color: var(--cor1);
+  padding: 15px;
+  border-radius: 5px;
+}
+.login {
+  width: 49%;
+  background-color: var(--cor1);
+  padding: 15px;
+  border-radius: 5px;
+ }
+ .erro {
+  margin-bottom: 20px;
+  font-size: .7em;
+  padding: 5px 15px;
+  text-align: left;
+  border-radius: 7px;
+  background-color: rgb(255, 202, 215);
+  color: rgb(147, 0, 0);
+ }
+ .success {
+  margin-bottom: 20px;
+  font-size: .7em;
+  padding: 5px 15px;
+  text-align: left;
+  border-radius: 7px;
+  background-color: rgb(155, 245, 174);
+  color: rgb(5, 71, 7);
+ }
+ .table tr {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+ }
+ .table td {
+  border-bottom: 1px solid black;
+  padding: 3px;
+  text-align: left;
+  width: 25%;
+ }
+
+ .agenda {
+  font-size: .7em;
+  background-color: rgb(216, 216, 216);
+  margin-top: 50px;
+ }
+.contato {
+  width: 100%;
+  background-color: rgb(102, 143, 107);
+  padding: 15px;
+  border-radius: 5px;
+ }
+.cadastroContato {
+  text-align: left;
+}
+.nav-link{
+  font-size: .7em;
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+ }
+ .nav-link a {
+  background-color: rgb(25, 25, 25);
+ }
+
+ .edit {
+  font-weight: 700;
+  text-decoration: none;
+  color: rgb(12, 71, 19);
+ }
+ .del {
+  font-weight: 700;
+  text-decoration: none;
+  color: rgb(255, 0, 0);
+ }

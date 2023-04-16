@@ -1,0 +1,53 @@
+<table class="standardTable calendar">
+  <thead class="weekDay">
+    <tr class="headerMonthYear" > 
+      
+      <th>
+        <div onclick="window.location.href = `/diary/index/down/<%= saveDateEjs %>`">
+          <i class="fas fa-backward"></i>
+        </div>
+      </th> 
+        <th colspan="5">
+          <%= monthVar %>
+        </th>
+      <th>
+        <div onclick="window.location.href = `/diary/index/up/<%= saveDateEjs %>`">
+          <i class="fas fa-forward"></i>
+        </div>
+      </th>
+
+    </tr>
+    <tr>
+     
+      <% for( let i = 0; i < dayWeeks.length; i++ ) { %>
+      <th><%= dayWeeks[i] %></th>
+      <% } %>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <% while (dayMonth <= numDaysMonth) { %>
+      <tr>
+        <% for (let k = 0; k < dayWeeks.length; k++) { %>
+          <% if (k !== firstDayWeekMonth && dayMonth === 1) { %>
+              <td></td>
+              <% continue %>
+          <% } %>
+          <% if (k === firstDayWeekMonth && dayMonth <= numDaysMonth) { %>
+               <td><a href="/diary/day/<%= dayMonth %>/<%= saveDateEjs %>"><%= dayMonth %></a></td>
+               <% dayMonth++ %>
+               <% continue %>
+          <% } %>
+          <% if (dayMonth > 1 && dayMonth <= numDaysMonth) { %>
+              <td><a href="/diary/day/<%= dayMonth %>/<%= saveDateEjs %>"><%= dayMonth %></a></td>
+              <% dayMonth++ %>
+              <% continue %>
+          <% } %>
+            <td></td>
+        <% } %> 
+      </tr>
+    <% } %>
+   
+  </tbody>
+  
+  </table>

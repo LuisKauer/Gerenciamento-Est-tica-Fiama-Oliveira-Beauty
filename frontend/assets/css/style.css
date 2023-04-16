@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap');
+
+/* Color Variables */
+:root{
+  --cor0: rgb(159, 209, 209);
+  --cor1: rgb(183, 183, 157);
+  --cor2: rgb(250, 235, 240);
+  --cor3: rgb(255, 255, 255);
+  --cor4: rgb(175, 175, 175);
+  --cor5: rgb(0, 0, 0);
+}
+
+/* General Styles */
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: aliceblue;
+}
+a {
+  text-decoration: none;
+}
+
+h3 {
+  padding: 10px;
+}
+
+/* Header Styles */
+.header {
+  background-color:  rgb(196, 172, 172);
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header span {
+  margin: 10px;
+  text-align: center;
+}
+
+#imgLogo {
+  margin: 10px auto;
+  width: 150px;
+  box-shadow: 1px 1px 4px rgb(93, 17, 17);
+}
+
+/* Main Container Styles */
+.container {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+/* Container Styles - where search results and records are shown  */
+.containerRecord {
+  padding: 10px;
+  margin: 10px auto;
+  height: auto;
+  width: 80%;
+  background-color:  rgb(247, 207, 207);
+}
+.containerRecord h3 {
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
+}
+.containerRecord form {
+  box-sizing: border-box;
+  background-color: rgb(241, 241, 241);
+  padding: 15px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(62, 62, 62);
+  box-shadow: inset 1px 1px 2px 1px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.containerRecord form input{
+  font-size: 18px;
+  width: 100%;
+  height: 30px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Style and organization of research  and records inputs */
+#div-service,
+#div-expense {
+  position: relative;
+  width: 45%;
+  margin-right: 1%;
+}
+#div-cliente {
+  position: relative;
+  width: 25%;
+  margin-right: 1%;
+}
+#div-description {
+  position: relative;
+  width: 25%;
+  margin-right: 1%;
+}
+#div-data,
+#div-value,
+#div-startTime,
+#div-endTime {
+  position: relative;
+  width: 10%;
+  margin-right: 1%;
+}
+#div-btn {
+  position: relative;
+  width: 10%;
+}
+.containerRecord form input::placeholder{
+  opacity: 0;
+}
+.containerRecord form input:focus + label,
+.containerRecord form input:not(:placeholder-shown) + label {
+  background-color: rgb(255, 255, 255);
+  font-size: 11px;
+  top: -6px;
+  color: black;
+  transition: .3s;
+}
+.containerRecord form label {
+  font-size: 14px;
+  padding: 0 1px;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  color: rgb(174, 105, 45);
+}
+
+/* Polls and releases entry button style */
+.lancar {
+  background-color: #b2804b;
+  color: white;
+  padding: 3px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.3s ease-in-out;
+}
+.lancar:hover {
+  box-shadow: 0 18px 36px 0 rgba(0,0,0,0.2), 0 14px 40px 0 rgba(0,0,0,0.19);
+  transform: translateY(-3px);
+}
+.btn {
+  margin: 40px;
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
+  background-color: rgb(154, 163, 151);
+  flex-direction: row;
+  text-align: center;
+  padding-top: 10%;
+}
+.btn a {
+  text-decoration: none;
+  color: black;
+  font: 15px Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+/* Table container style */
+.res {
+  background-color: aliceblue;
+  border: 1px solid rgb(62, 62, 62);
+  box-shadow: inset 1px 1px 2px 1px black;
+  width: 100%;
+  height: auto;
+}
+
+/* Table style */
+.standardTable {
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+  height: auto;
+}
+
+.standardTable td {
+  font-size: 18px;
+  padding: 5px 7px;
+  border: 0.5px solid black;
+}
+
+.standardTable thead {
+  background-color: rgb(225, 225, 225);
+  border: 1px solid rgb(62, 62, 62);
+  box-shadow: inset 1px 1px 1px 1px black;
+}
+
+.scheduleTable {
+  font-family: 'Dancing Script', cursive;
+  width: 100%;
+  background-color: transparent;
+  margin: 0;
+  line-height: 20px;
+  border: none;
+  
+}
+.scheduleTable thead tr,
+.scheduleTable thead td {
+  padding-top: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.scheduleTable td {
+  text-align: center;
+  padding: 10px;
+  font-size: 1.4em;
+  border: none;
+}
+
+
+/* Billing Table style */
+#month td {
+  text-align: center;
+  font-weight: bold;
+  color: var(--cor5);
+  background-color: var(--cor1);
+}
+.w22 {
+  width: 22%;
+}
+.w45 {
+  width: 45%;
+}
+.w5 {
+  width: 5%;
+}
+.w54 {
+  width: 54%;
+}
+.w10 {
+  width: 10%;
+}
+
+#lastLine td:nth-child(1),
+#lastLine td:nth-child(2) {
+  visibility: hidden;
+  border: none;
+}
+#lastLine td:nth-child(3),
+#lastLine td:nth-child(4) {
+  font-weight: bold;
+  color: var(--cor5);
+  background-color: var(--cor1);
+}
+
+/* Diary table  style */
+#headLineTBDiary .w9 {
+  width: 9%;
+}
+
+/* button edit and delete style */
+.delEdit {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+}
+.delEdit form {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  align-items: center;
+}
+
+.delEdit button {
+  border: none;
+}
+
+.delEdit img {
+  width: 13px;
+}
+
+/* Error and success containers style */
+
+#alert-container {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.erro {
+  line-height: 1.1em;
+  margin-bottom: 20px;
+  font-size: 1em;
+  padding: 5px 15px;
+  text-align: left;
+  border-radius: 7px;
+  background-color: rgb(255, 202, 215);
+  color: rgb(147, 0, 0);
+ }
+.erro p {
+  margin: 10px 0px;
+}
+
+.success {
+  margin-bottom: 20px;
+  font-size: 1em;
+  padding: 5px 15px;
+  text-align: left;
+  border-radius: 7px;
+  background-color: rgb(155, 245, 174);
+  color: rgb(5, 71, 7);
+}
+.success p {
+  margin: 10px 0px;
+}
+
+/* style render schedule */
+.div-schedule {
+  padding: 0;
+  background: url("/images/fundoAgenda.png") no-repeat center top;
+  background-size: cover;
+  width: 74%;
+  min-height: 237px;
+}
+
+/* style render invoicing index */
+.invoicing {
+  margin: 0px auto 15px auto;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2%;
+}
+
+/* style render invoicing index */
+
+.btn-monthly,
+.btn-yearly {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  width: 100%;
+}
+
+
+/* style render spreadsheet */
+.containerSpreadsheet {
+  background-color: rgb(255, 255, 255);
+  padding:  1% 3%;
+  margin: 20px auto;
+  width: 90vw;
+}
+
+
+.menuHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--cor5);
+}
+
+.menuHead h3 {
+  font-size: 1.9em;
+}
+
+.btn-back {
+  cursor: pointer;
+  color: white;
+  padding: 3px 7px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: darkslategray;
+  box-shadow: 1px 1px 2px black;
+}
+.btn-back:hover {
+  background-color: rgb(88, 168, 168);
+}
+
+.navSpreasheetM {
+ max-width: 30%;
+}
+
+/* style table spreadsheet */
+.tables {
+  display: flex;
+  align-items: flex-start;
+  height: max-content;
+}
+
+#tableRevenue {
+  border: .5px solid black;
+  background-color: rgb(255, 248, 225);
+  box-shadow: 1px 1px 2px black;
+}
+#tableRevenue tfoot {
+  background-color: rgb(252, 225, 139);
+}
+#tableRevenue thead {
+  background-color: rgb(252, 225, 139);
+}
+
+#tableExpense {
+  border: .5px solid black;
+  background-color: rgb(255, 230, 221);
+  box-shadow: 1px 1px 2px black;
+}
+#tableExpense tfoot {
+  background-color: rgb(255, 175, 143);
+}
+#tableExpense thead {
+  background-color: rgb(255, 175, 143);
+}
+
+.result {
+  background-color: rgb(206, 206, 206);
+  box-shadow: 1px 1px 2px black;
+  border: 1px solid black;
+  padding: 10px 15px;
+  margin: 10px auto;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tableSpredsheetM {
+  border-collapse: collapse;
+  justify-content: center;
+  margin: 1% auto;
+  width: 50%;
+}
+
+.tableSpredsheetM thead th {
+  padding: 1% 1%;
+  border-bottom: 2px solid var(--cor5);
+}
+
+.tableSpredsheetM tbody td {
+  text-align: center;
+  padding: 1% 1%;
+  border-bottom: 1px solid var(--cor5);
+}
+
+.tableSpredsheetM tfoot td {
+  text-align: center;
+  padding: 1% 1%;
+  border-top: 2px solid var(--cor5);
+  font-weight: 800;
+}
+
+/* Calendar */
+.div-calendar {
+  width: 24%;
+}
+
+.calendar {
+  background-color: var(--cor3);
+}
+
+.calendar tbody td {
+  font-size: 0.95em;
+  text-align: center;
+}
+
+.weekDay {
+  background-color: var(--cor1);
+  
+}
+
+.weekDay th {
+  border: solid 1px var(--cor5);
+  padding: 5px 10px;
+ }
+
+.headerMonthYear {
+  background-color: rgb(18, 57, 30);
+  color: aliceblue;
+}
+
+.headerMonthYear th {
+  border: none;
+  padding: 10px;
+  font-size: 1.1em;
+}
+
+.headerMonthYear i {
+  font-size: 0.8em;
+}
+
+ /* Navigation Bar */
+.navBar {
+  margin: 30px auto -10px auto;
+  width: 80%;
+  background-color: rgb(104, 19, 33)
+}
+
+.navBar ul {
+  display: flex;
+  justify-content: right;
+  flex-direction: row;
+  list-style: none;
+}
+
+.navBar ul li {
+  padding: 15px 25px;
+  border-left: 1px solid rgb(123, 4, 4);
+}
+
+.navBar ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.navBar ul li:hover {
+  background-color: rgb(215, 26, 26);
+  border-left: 1px solid rgb(123, 4, 4);
+  transition-duration: .7s;
+}
+
+/* Navigation Bar Finances */
+
+
+.finances {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  list-style: none;
+}
+
+.finances li {
+  
+  text-align: center;
+  background-color: rgb(151, 53, 71);
+  color: aliceblue;
+  box-shadow: 1px 1px 3px black;
+}
+
+.finances li a {
+  padding: 15px 0px;
+  display: block;
+  width: 100%;
+  line-height: 100%;
+  color: white;
+}
+
+#edit {
+  position: absolute;
+  border: 1px solid black;
+  top: 25%;
+  left: 10%;
+  z-index: 2;
+  box-shadow: 1px 1px 10px black;
+}
